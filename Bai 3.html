@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sắp xếp các số nguyên tố</title>
+</head>
+<body>
+
+</body>
+<script>
+    function isPrime(n) {
+        if (n <= 1) return false;
+        if (n <= 3) return true;
+        if (n % 2 === 0 || n % 3 === 0) return false;
+        let i = 5;
+        while (i * i <= n) {
+            if (n % i === 0 || n % (i + 2) === 0) return false;
+            i += 6;
+        }
+        return true;
+    }
+    function findAndSortPrimes(arr) {
+        const primeArr = arr.filter(x => isPrime(x));
+        primeArr.sort((a, b) => a - b);
+        return primeArr; find
+    }
+
+    const inputString = prompt("Nhập các phần tử số nguyên, cách nhau bằng dấu phẩy (ví dụ: 2,3,5,7):");
+    const inputArray = inputString.split(",").map(Number);
+    const primeResult = findAndSortPrimes(inputArray);
+    document.write("Mảng chứa các số nguyên tố là:", primeResult);
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hiệu tổng chẵn lẽ</title>
+</head>
+<body>
+
+</body>
+<script>
+    function tinhHieuTongChanLe(arr) {
+        let tongChan = 0;
+        let tongLe = 0;
+
+        arr.forEach(function(a) {
+            if (a % 2 === 0) {
+                tongChan += a;
+            } else {
+                tongLe += a;
+            }
+        });
+
+        return tongChan - tongLe;
+    }
+
+    function main() {
+        const n = parseInt(prompt("Nhập số phần tử của mảng (n <= 20): "));
+
+        if (isNaN(n) || n <= 0 || n > 20) {
+            document.write("Số phần tử không hợp lệ!");
+            return;
+        }
+
+        const arr = [];
+        for (let i = 0; i < n; i++) {
+            const num = parseInt(prompt(`Nhập phần tử thứ ${i + 1}: `));
+            arr.push(num);
+        }
+
+        document.write("Các phần tử của mảng là:", [arr] );
+        const hieu = tinhHieuTongChanLe(arr);
+        document.write("<br> Hiệu của tổng các số chẵn và tổng các số lẻ trong mảng là:" + hieu);
+    }
+
+    main();
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function countUpperCaseChars(str) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] >= 'A' && str[i] <= 'Z') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    function countUpperCaseCharsOrMessage(str) {
+        const upperCaseCount = countUpperCaseChars(str);
+        if (upperCaseCount > 0) {
+            return upperCaseCount;
+        } else {
+            return "the strings is not contain upper char";
+        }
+    }
+
+    const userInput = prompt("Nhập vào một chuỗi ký tự:");
+    if (userInput !== null && userInput !== "") {
+        const result = countUpperCaseCharsOrMessage(userInput);
+        document.write("Kết quả:", result);
+    } else {
+        document.write("Bạn chưa nhập chuỗi!");
+    }
+</script>
+</html>
